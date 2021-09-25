@@ -1,5 +1,5 @@
 # Flutter GetX Study
-flutter의 상태 관리 패키지인 GetX를 사용하기 위해
+flutter의 상태 관리 패키지인 `GetX`를 사용하기 위해
 공부하며 작성해본 예시 코드입니다.
 
 <br>

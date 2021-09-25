@@ -1,4 +1,6 @@
 import 'package:app/get_to_page.dart';
+import 'package:app/state_reactive.dart';
+import 'package:app/state_simple.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,6 +20,14 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/next',
           page: () => GetTo(),
+        ),
+        GetPage(
+          name: '/state-simple',
+          page: () => StateSimple(),
+        ),
+        GetPage(
+          name: '/state-reative',
+          page: () => StateReactive(),
         ),
       ],
     );
@@ -51,6 +61,10 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Column(
           children: [
+            Text(
+              "라우트 관리",
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
             buildTextButton(
               () {
                 Get.to(GetTo());
@@ -132,6 +146,25 @@ class _HomePageState extends State<HomePage> {
                 );
               },
               'Get.bottomSheet()',
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Text(
+              "상태 관리",
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+            buildTextButton(
+              () {
+                Get.toNamed('/state-simple');
+              },
+              'State simple 방식',
+            ),
+            buildTextButton(
+              () {
+                Get.toNamed('/state-reative');
+              },
+              'State reative 방식',
             ),
           ],
         ),
